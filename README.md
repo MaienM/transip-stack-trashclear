@@ -8,9 +8,18 @@ This is a script that clears your trashbin, fixing this problem.
 
 ## Usage
 
-You'll need ruby, because that's what this is written in.
+Copy `example_env` to some filename, and fill in the info. Alternatively, set
+the environment variables in another manner.
 
-Copy `example_env` to some filename, and fill in the info.
+## The easy way
+
+```
+docker run --rm --env-file=path_to_env_file maienm/transip-stack-trashclear
+```
+
+### The hard way
+
+You'll need ruby, because that's what this is written in.
 
 ```
 bundle install
