@@ -11,7 +11,7 @@ This is a script that clears your trashbin, fixing this problem.
 Copy `example_env` to some filename, and fill in the info. Alternatively, set
 the environment variables in another manner.
 
-## The easy way
+### The easy way
 
 ```
 docker run --rm --env-file=path_to_env_file maienm/transip-stack-trashclear
