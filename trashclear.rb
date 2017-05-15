@@ -19,9 +19,9 @@ end
 
 # Load the environment file
 Dotenv.load(ARGV[0] || '.env')
-STACK_URL = ENV['STACK_URL']
-STACK_USERNAME = ENV['STACK_USERNAME']
-STACK_PASSWORD = ENV['STACK_PASSWORD']
+STACK_URL = ENV['STACK_URL'] || ''
+STACK_USERNAME = ENV['STACK_USERNAME'] || ''
+STACK_PASSWORD = ENV['STACK_PASSWORD'] || ''
 
 # Check the environment variables
 abort('STACK_URL needs to start with https://') unless STACK_URL.starts_with?('https://')
