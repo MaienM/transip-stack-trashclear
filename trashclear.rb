@@ -3,7 +3,6 @@
 require 'net/http'
 require 'bundler'
 Bundler.require
-Bundler.require(:development)
 
 def usage
 	puts "Usage: $0 [env file]"
@@ -13,12 +12,13 @@ def usage
 	puts "  STACK_USERNAME: the username to login with"
 	puts "  STACK_PASSWORD: the password to login with"
 	puts "  STACK_USER_AGENT: the user-agent to use (optional)"
+	puts "if no env file is passed, .env is used, the variables that already"
+	puts "exists in the environment are used"
 	exit 1
 end
 
 # Load the environment file
-usage if ARGV.length < 1
-Dotenv.load(ARGV[0])
+Dotenv.load(ARGV[0] || '.env')
 STACK_URL = ENV['STACK_URL']
 STACK_USERNAME = ENV['STACK_USERNAME']
 STACK_PASSWORD = ENV['STACK_PASSWORD']
