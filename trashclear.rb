@@ -83,7 +83,7 @@ res.validate!
 chain = chain.cookies(res.cookies)
 
 # Get the CSRF token
-puts 'Gettings CSRF token'
+puts 'Getting CSRF token'
 res = chain.get("#{STACK_URL}/trashbin")
 res.validate!
 csrf_token = res.parse.andand.xpath('//meta[@name="csrf-token"]').first.andand.attr(:content)
